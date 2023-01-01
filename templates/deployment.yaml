@@ -20,6 +20,8 @@ spec:
       labels:
         {{- include "ketonix.selectorLabels" . | nindent 8 }}
     spec:
+      source:
+        path: specsourcepath
       {{- with .Values.imagePullSecrets }}
       imagePullSecrets:
         {{- toYaml . | nindent 8 }}
